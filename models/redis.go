@@ -2,6 +2,7 @@ package redis
 
 import (
 	"github.com/go-redis/redis"
+	"os"
 	"strings"
 )
 
@@ -18,5 +19,15 @@ func NewClient(host string, port string) *redis.Client {
 }
 
 func init() {
-	Client = NewClient("127.0.0.1", "6379")
+	var redisHost, redisPort string
+	redisHost = os.Getenv("REDIS_HOST")
+	if redisHost == "" {
+		redisHost = "127.0.0.1"
+	}
+
+	redisPort = os.Getenv("REDIS_PORT")
+	if redisPort == "" {
+		redisPort = "6379"
+	}
+	Client = NewClient(redisHost, redisPort)
 }
