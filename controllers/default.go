@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"github.com/astaxie/beego"
+	"strings"
 	"tinyUrl/models"
 )
 
@@ -24,7 +25,8 @@ func (c *MainController) Post() {
 		c.Data["ShortURL"] = models.UrlEncode(url)
 		return
 	} else if shortUrl != "" {
-		url := models.UrlDecode(shortUrl)
+		urls := strings.Split(shortUrl, "/")
+		url := models.UrlDecode(urls[len(urls)-1])
 		c.Data["URL"] = url
 		c.Data["ShortURL"] = shortUrl
 		return
