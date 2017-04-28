@@ -29,7 +29,7 @@ func Base62Encode(number int) string {
 func UrlEncode(url string) string {
 	shortUrl, _ := Client.Get("reverse-url:" + url).Result()
 	if shortUrl != "" {
-		return shortUrl
+		return BASE_URL + "/link/" + shortUrl
 	}
 	shortIdInt, _ := Client.Incr("last-url-id").Result()
 	shortId := Base62Encode(int(shortIdInt))
