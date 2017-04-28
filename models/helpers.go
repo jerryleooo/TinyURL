@@ -2,14 +2,13 @@ package models
 
 import (
 	"fmt"
-	"os"
 	"strings"
 )
 
 var BASE_URL string
 
 func init() {
-	BASE_URL = os.Getenv("GR34AB0E8080_HOST") + ":" + os.Getenv("GR34AB0E8080_PORT")
+	BASE_URL = "www.w2read.com:10080"
 }
 
 func Base62Encode(number int) string {

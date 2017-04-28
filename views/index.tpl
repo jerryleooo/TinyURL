@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
   <meta charset="UTF-8">
-  <title>Login Page | Amaze UI Example</title>
+  <title>TinyURL</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="format-detection" content="telephone=no">
@@ -43,6 +43,10 @@
       <div class="am-cf">
         <input type="submit" name="" value="提交" class="am-btn am-btn-primary am-btn-sm am-fl">
       </div>
+      {{ if .ShortURL }}
+      <hr>
+      访问 <a href="http://{{ .ShortURL }}">{{ .ShortURL }}</a> 体验
+      {{ end }}
     </form>
     <hr>
   </div>
