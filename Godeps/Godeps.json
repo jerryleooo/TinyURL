@@ -1,0 +1,76 @@
+{
+	"ImportPath": "tinyUrl",
+	"GoVersion": "go1.8",
+	"Deps": [
+		{
+			"ImportPath": "github.com/astaxie/beego",
+			"Comment": "v1.8.1",
+			"Rev": "522b3a4a70bd86c20e5d2f4ca6320b44204c0019"
+		},
+		{
+			"ImportPath": "github.com/astaxie/beego/config",
+			"Comment": "v1.8.1",
+			"Rev": "522b3a4a70bd86c20e5d2f4ca6320b44204c0019"
+		},
+		{
+			"ImportPath": "github.com/astaxie/beego/context",
+			"Comment": "v1.8.1",
+			"Rev": "522b3a4a70bd86c20e5d2f4ca6320b44204c0019"
+		},
+		{
+			"ImportPath": "github.com/astaxie/beego/grace",
+			"Comment": "v1.8.1",
+			"Rev": "522b3a4a70bd86c20e5d2f4ca6320b44204c0019"
+		},
+		{
+			"ImportPath": "github.com/astaxie/beego/logs",
+			"Comment": "v1.8.1",
+			"Rev": "522b3a4a70bd86c20e5d2f4ca6320b44204c0019"
+		},
+		{
+			"ImportPath": "github.com/astaxie/beego/session",
+			"Comment": "v1.8.1",
+			"Rev": "522b3a4a70bd86c20e5d2f4ca6320b44204c0019"
+		},
+		{
+			"ImportPath": "github.com/astaxie/beego/toolbox",
+			"Comment": "v1.8.1",
+			"Rev": "522b3a4a70bd86c20e5d2f4ca6320b44204c0019"
+		},
+		{
+			"ImportPath": "github.com/astaxie/beego/utils",
+			"Comment": "v1.8.1",
+			"Rev": "522b3a4a70bd86c20e5d2f4ca6320b44204c0019"
+		},
+		{
+			"ImportPath": "github.com/go-redis/redis",
+			"Comment": "v6.2.4-4-gd0dd05b",
+			"Rev": "d0dd05b65910c3c658378f2ddd17cc96df56b17d"
+		},
+		{
+			"ImportPath": "github.com/go-redis/redis/internal",
+			"Comment": "v6.2.4-4-gd0dd05b",
+			"Rev": "d0dd05b65910c3c658378f2ddd17cc96df56b17d"
+		},
+		{
+			"ImportPath": "github.com/go-redis/redis/internal/consistenthash",
+			"Comment": "v6.2.4-4-gd0dd05b",
+			"Rev": "d0dd05b65910c3c658378f2ddd17cc96df56b17d"
+		},
+		{
+			"ImportPath": "github.com/go-redis/redis/internal/hashtag",
+			"Comment": "v6.2.4-4-gd0dd05b",
+			"Rev": "d0dd05b65910c3c658378f2ddd17cc96df56b17d"
+		},
+		{
+			"ImportPath": "github.com/go-redis/redis/internal/pool",
+			"Comment": "v6.2.4-4-gd0dd05b",
+			"Rev": "d0dd05b65910c3c658378f2ddd17cc96df56b17d"
+		},
+		{
+			"ImportPath": "github.com/go-redis/redis/internal/proto",
+			"Comment": "v6.2.4-4-gd0dd05b",
+			"Rev": "d0dd05b65910c3c658378f2ddd17cc96df56b17d"
+		}
+	]
+}
