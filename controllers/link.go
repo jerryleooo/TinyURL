@@ -13,7 +13,6 @@ type LinkController struct {
 func (c *LinkController) Get() {
 	shortId := c.GetString(":link")
 	fmt.Println(shortId)
-	url := models.UrlDecode(string(shortId[0]))
-	fmt.Println(url)
+	url := models.UrlDecode(shortId)
 	c.Redirect(url, 302)
 }

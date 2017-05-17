@@ -1,6 +1,7 @@
 package models
 
 import (
+	"os"
 	"fmt"
 	"strings"
 )
@@ -8,12 +9,16 @@ import (
 var BASE_URL string
 
 func init() {
-	BASE_URL = "www.w2read.com:10080"
+	if baseUrl := os.Getenv("BASE_URL"); baseUrl != "" {
+		BASE_URL = os.Getenv("BASE_URL")
+	} else {
+		BASE_URL = "t.instask.me"
+	}
 }
 
 func Base62Encode(number int) string {
 	if number == 0 {
-		return "0"
+		return "000000"
 	}
 	var i int
 	alphabet := "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -22,19 +27,19 @@ func Base62Encode(number int) string {
 		number, i = number/62, number%62
 		base62 = append(base62, string(alphabet[i]))
 	}
-	fmt.Println(base62)
-	return strings.Join(base62, "")
+	r := strings.Join(base62, "")
+	return fmt.Sprintf("%06s", r)
 }
 
 func UrlEncode(url string) string {
-	shortUrl, _ := Client.Get("reverse-url:" + url).Result()
-	if shortUrl != "" {
-		return BASE_URL + "/link/" + shortUrl
+	if sid, _ := Client.Get("reverse-url:" + url).Result(); sid != "" {
+		return BASE_URL + "/link/" + sid
 	}
 	shortIdInt, _ := Client.Incr("last-url-id").Result()
 	shortId := Base62Encode(int(shortIdInt))
-	Client.Set("url-target:"+shortId, url, 0)
-	Client.Set("reverse-url:"+url, shortId, 0)
+	fmt.Println(shortId)
+	Client.Set("url-target:" + shortId, url, 0)
+	Client.Set("reverse-url:" + url, shortId, 0)
 	return BASE_URL + "/link/" + shortId
 }
 
