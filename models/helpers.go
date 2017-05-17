@@ -51,3 +51,8 @@ func UrlDecode(shortId string) string {
 		return "Not Found"
 	}
 }
+
+func IncrClickCount(shortId string) int {
+	r, _ := Client.Incr("click-count:" + shortId).Result()
+	return int(r)
+}
